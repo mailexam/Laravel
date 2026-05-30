@@ -19,3 +19,5 @@ yarn-error.log
 /storage/*.key
 /storage/pail
 .phpactor.json
+
+.idea
