@@ -1,6 +1,6 @@
 # Laravel + Mailexam
 
-Minimal [Laravel](https://laravel.com/) example that sends test mail through [Mailexam](https://mailexam.ru/) SMTP via Laravel Mail.
+Minimal [Laravel](https://laravel.com/) example that sends test mail through [Mailexam](https://mailexam.io/) SMTP via Laravel Mail.
 
 Based on the [Mailexam Laravel guide](https://wiki.mailexam.ru/en/examples/laravel/).
 
@@ -15,7 +15,7 @@ From your Mailexam welcome email or dashboard:
 |----------|-------------|
 | `MAIL_USERNAME` | SMTP login (for example, `xxxxx`) |
 | `MAIL_PASSWORD` | SMTP password (paired with the login) |
-| `MAIL_HOST` | `{login}.mailexam.ru` (must match the login) |
+| `MAIL_HOST` | `{login}.mailexam.io` (must match the login) |
 
 ## Quick start (host)
 
@@ -37,7 +37,7 @@ php artisan key:generate
 ```env
 MAIL_MAILER=smtp
 MAIL_SCHEME=smtp
-MAIL_HOST=YOUR_LOGIN.mailexam.ru
+MAIL_HOST=YOUR_LOGIN.mailexam.io
 MAIL_PORT=587
 MAIL_USERNAME=YOUR_LOGIN
 MAIL_PASSWORD=YOUR_PASSWORD
@@ -74,7 +74,7 @@ The message appears in the Mailexam dashboard → your project → inbox.
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `MAIL_MAILER` | yes | `smtp` | Use `smtp` for Mailexam |
-| `MAIL_HOST` | yes | — | `{login}.mailexam.ru` |
+| `MAIL_HOST` | yes | — | `{login}.mailexam.io` |
 | `MAIL_PORT` | no | `587` | SMTP port (`587`, `2525`, or `25`) |
 | `MAIL_USERNAME` | yes | — | SMTP login |
 | `MAIL_PASSWORD` | yes | — | SMTP password |
@@ -127,7 +127,7 @@ Set these secrets in your CI environment:
 ```yaml
 variables:
   MAIL_MAILER: smtp
-  MAIL_HOST: "${MAILEXAM_LOGIN}.mailexam.ru"
+  MAIL_HOST: "${MAILEXAM_LOGIN}.mailexam.io"
   MAIL_PORT: "587"
   MAIL_USERNAME: "${MAILEXAM_LOGIN}"
   MAIL_PASSWORD: "${MAILEXAM_PASSWORD}"
@@ -135,7 +135,7 @@ variables:
   MAIL_FROM_ADDRESS: "noreply@example.test"
 ```
 
-After sending a message in a test, verify delivery via the [Mailexam API](https://mailexam.ru/api).
+After sending a message in a test, verify delivery via the [Mailexam API](https://mailexam.io/api).
 
 For unit tests without network use `MAIL_MAILER=array` or `log`.
 
@@ -143,7 +143,7 @@ For unit tests without network use `MAIL_MAILER=array` or `log`.
 
 **Connection could not be established**
 
-- `MAIL_HOST` must be `{login}.mailexam.ru`, same login as `MAIL_USERNAME`.
+- `MAIL_HOST` must be `{login}.mailexam.io`, same login as `MAIL_USERNAME`.
 - Login and password must come from the same Mailexam project.
 - Run `php artisan config:clear` after changing `.env`.
 
@@ -161,4 +161,4 @@ For unit tests without network use `MAIL_MAILER=array` or `log`.
 - [Mailexam Laravel guide (wiki)](https://wiki.mailexam.ru/en/examples/laravel/)
 - [Symfony reference implementation](https://github.com/mailexam/Symfony) — another PHP framework
 - [Laravel Mail documentation](https://laravel.com/docs/mail)
-- [Mailexam API documentation](https://mailexam.ru/api)
+- [Mailexam API documentation](https://mailexam.io/api)
