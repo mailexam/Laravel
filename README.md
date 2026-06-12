@@ -162,3 +162,7 @@ For unit tests without network use `MAIL_MAILER=array` or `log`.
 - [Symfony reference implementation](https://github.com/mailexam/Symfony) — another PHP framework
 - [Laravel Mail documentation](https://laravel.com/docs/mail)
 - [Mailexam API documentation](https://mailexam.io/api)
+
+## License
+
+Apache 2.0
